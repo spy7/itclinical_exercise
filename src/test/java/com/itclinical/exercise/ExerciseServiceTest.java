@@ -45,4 +45,10 @@ public class ExerciseServiceTest {
         String result = exerciseService.getUpper("ITCLiNicAl", -1);
         Assertions.assertEquals("", result);
     }
+
+    @Test
+    public void testGetUpperWithN0() {
+        String result = exerciseService.getUpper("ITCLiNicAl", 0);
+        Assertions.assertEquals("", result);
+    }
 }
