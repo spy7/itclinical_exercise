@@ -100,4 +100,11 @@ public class ExerciseServiceTest {
         String result = exerciseService.getUpperOrSymbol("ABCabc123!@#", 2);
         Assertions.assertEquals("B2!#", result);
     }
+
+    // Optional Task 2
+    @Test
+    public void testGetUpperPrintResult() {
+        String result = exerciseService.getUpperPrint("ItCLINiCAL", 1);
+        Assertions.assertEquals("ICLINCAL", result);
+    }
 }
