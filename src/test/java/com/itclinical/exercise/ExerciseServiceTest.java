@@ -39,4 +39,10 @@ public class ExerciseServiceTest {
         String result = exerciseService.getUpper("ITCLiNicAl", 100);
         Assertions.assertEquals("", result);
     }
+
+    @Test
+    public void testGetUpperWithNMinus1() {
+        String result = exerciseService.getUpper("ITCLiNicAl", -1);
+        Assertions.assertEquals("", result);
+    }
 }
