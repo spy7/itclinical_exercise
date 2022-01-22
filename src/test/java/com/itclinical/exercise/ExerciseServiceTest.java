@@ -63,4 +63,11 @@ public class ExerciseServiceTest {
         String result = exerciseService.getUpper("123!@#X", 1);
         Assertions.assertEquals("X", result);
     }
+
+    // Optional Task 1
+    @Test
+    public void testGetUpperOrSymbolWithN1() {
+        String result = exerciseService.getUpperOrSymbol("!tCL1Nical", 1);
+        Assertions.assertEquals("!CL1N", result);
+    }
 }
