@@ -131,4 +131,10 @@ public class ExerciseServiceTest {
         exerciseService.getUpperPrint("ItCLINiCAL", 1);
         Assertions.assertEquals("I = 2\nC = 2\nL = 2\nN = 1\nA = 1\n", outContent.toString());
     }
+
+    @Test
+    public void testCountChars() {
+        exerciseService.printCount("ICLINCAL");
+        Assertions.assertEquals("I = 2\nC = 2\nL = 2\nN = 1\nA = 1\n", outContent.toString());
+    }
 }
