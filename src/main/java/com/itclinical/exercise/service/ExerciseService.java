@@ -47,6 +47,21 @@ public class ExerciseService {
     }
 
     public String getUpperPrint(String input, int n) {
-        return "ICLINCAL";
+        int length = input.length();
+        char ch;
+        StringBuilder result = new StringBuilder();
+
+        if (n < 1) {
+            return "";
+        }
+        
+        for (int i = n - 1; i < length; i+=n) {
+            ch = input.charAt(i);
+            if (Character.isUpperCase(ch)) {
+                result.append(ch);
+            }
+        }
+        
+        return result.toString();
     }
 }
