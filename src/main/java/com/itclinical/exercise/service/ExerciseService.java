@@ -9,7 +9,7 @@ public class ExerciseService {
         char ch;
         StringBuilder result = new StringBuilder();
         
-        for (int i = 0; i < length; i+=n) {
+        for (int i = n - 1; i < length; i+=n) {
             ch = input.charAt(i);
             if (Character.isUpperCase(ch)) {
                 result.append(ch);
