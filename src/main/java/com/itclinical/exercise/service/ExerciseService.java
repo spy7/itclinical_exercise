@@ -43,6 +43,6 @@ public class ExerciseService {
     }
 
     public boolean isSpecialChar(char ch) {
-        return ch == '!';
+        return !Character.isLetter(ch) && !Character.isDigit(ch);
     }
 }
