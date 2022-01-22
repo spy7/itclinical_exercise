@@ -88,4 +88,10 @@ public class ExerciseServiceTest {
         boolean result = exerciseService.isSpecialChar('L');
         Assertions.assertFalse(result);
     }
+
+    @Test
+    public void testIsSpecialCharWithNumber() {
+        boolean result = exerciseService.isSpecialChar('8');
+        Assertions.assertFalse(result);
+    }
 }
