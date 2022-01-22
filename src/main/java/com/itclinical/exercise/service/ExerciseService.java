@@ -41,4 +41,8 @@ public class ExerciseService {
         
         return result.toString();
     }
+
+    public boolean isSpecialChar(char ch) {
+        return ch == '!';
+    }
 }
