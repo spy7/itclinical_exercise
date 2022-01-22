@@ -82,4 +82,10 @@ public class ExerciseServiceTest {
         boolean result = exerciseService.isSpecialChar('?');
         Assertions.assertTrue(result);
     }
+
+    @Test
+    public void testIsSpecialCharWithLetter() {
+        boolean result = exerciseService.isSpecialChar('L');
+        Assertions.assertFalse(result);
+    }
 }
