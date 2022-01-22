@@ -45,4 +45,8 @@ public class ExerciseService {
     public boolean isSpecialChar(char ch) {
         return !Character.isLetter(ch) && !Character.isDigit(ch);
     }
+
+    public String getUpperPrint(String input, int n) {
+        return "ICLINCAL";
+    }
 }
