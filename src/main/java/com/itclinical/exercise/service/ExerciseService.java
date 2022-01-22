@@ -8,6 +8,10 @@ public class ExerciseService {
         int length = input.length();
         char ch;
         StringBuilder result = new StringBuilder();
+
+        if (n < 1) {
+            return "";
+        }
         
         for (int i = n - 1; i < length; i+=n) {
             ch = input.charAt(i);
