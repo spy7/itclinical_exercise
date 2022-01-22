@@ -76,4 +76,10 @@ public class ExerciseServiceTest {
         boolean result = exerciseService.isSpecialChar('!');
         Assertions.assertTrue(result);
     }
+
+    @Test
+    public void testIsSpecialCharWithSymbolQuestion() {
+        boolean result = exerciseService.isSpecialChar('?');
+        Assertions.assertTrue(result);
+    }
 }
