@@ -51,4 +51,10 @@ public class ExerciseServiceTest {
         String result = exerciseService.getUpper("ITCLiNicAl", 0);
         Assertions.assertEquals("", result);
     }
+
+    @Test
+    public void testGetUpperWithEmptyInput() {
+        String result = exerciseService.getUpper("", 1);
+        Assertions.assertEquals("", result);
+    }
 }
