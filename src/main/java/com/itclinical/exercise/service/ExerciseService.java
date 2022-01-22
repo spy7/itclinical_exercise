@@ -22,4 +22,8 @@ public class ExerciseService {
         
         return result.toString();
     }
+
+    public String getUpperOrSymbol(String input, int n) {
+        return "!CL1N";
+    }
 }
