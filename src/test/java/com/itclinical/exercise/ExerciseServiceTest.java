@@ -21,4 +21,10 @@ public class ExerciseServiceTest {
         String result = exerciseService.getUpper("ITCLiNicAl", 1);
         Assertions.assertEquals("ITCLNA", result);
     }
+
+    @Test
+    public void testGetUpperWithN2() {
+        String result = exerciseService.getUpper("ITCLiNicAl", 2);
+        Assertions.assertEquals("TLN", result);
+    }
 }
