@@ -138,4 +138,33 @@ public class ExerciseServiceTest {
         exerciseService.printCount("ICLINCAL");
         Assertions.assertEquals("I = 2\nC = 2\nL = 2\nN = 1\nA = 1\n", outContent.toString());
     }
+
+    // Refactor: remove duplicate code
+    @Test
+    public void testExtractUpperNoSymbolNoPrint() {
+        String result = exerciseService.extractUpper("I!CLINicAl", 1, false, false);
+        Assertions.assertEquals("ICLINA", result);
+        Assertions.assertEquals("", outContent.toString());
+    }
+
+    @Test
+    public void testExtractUpperNoSymbolNoPrintMinus1() {
+        String result = exerciseService.extractUpper("I!CLINicAl", -1, false, false);
+        Assertions.assertEquals("", result);
+        Assertions.assertEquals("", outContent.toString());
+    }
+
+    @Test
+    public void testExtractUpperSymbolNoPrint() {
+        String result = exerciseService.extractUpper("I!CLINicAl", 1, true, false);
+        Assertions.assertEquals("I!CLINA", result);
+        Assertions.assertEquals("", outContent.toString());
+    }
+
+    @Test
+    public void testExtractUpperSymbolPrint() {
+        String result = exerciseService.extractUpper("I!CLINicAl", 1, true, true);
+        Assertions.assertEquals("I!CLINA", result);
+        Assertions.assertEquals("I = 2\n! = 1\nC = 1\nL = 1\nN = 1\nA = 1\n", outContent.toString());
+    }
 }
