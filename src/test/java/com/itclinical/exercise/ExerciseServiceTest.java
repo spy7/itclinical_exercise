@@ -1,7 +1,12 @@
 package com.itclinical.exercise;
 
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
+
 import com.itclinical.exercise.service.ExerciseService;
 
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
 import org.junit.runner.RunWith;
@@ -12,6 +17,19 @@ import org.springframework.test.context.junit4.SpringRunner;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class ExerciseServiceTest {
+
+    private final PrintStream originalOut = System.out;
+    private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+
+    @Before
+    public void setUpStreams() {
+        System.setOut(new PrintStream(outContent));
+    }
+
+    @After
+    public void restoreStreams() {
+        System.setOut(originalOut);
+    }
 
     @Autowired
     private ExerciseService exerciseService;
@@ -106,5 +124,11 @@ public class ExerciseServiceTest {
     public void testGetUpperPrintResult() {
         String result = exerciseService.getUpperPrint("ItCLINiCAL", 1);
         Assertions.assertEquals("ICLINCAL", result);
+    }
+
+    @Test
+    public void testGetUpperPrintMessage() {
+        exerciseService.getUpperPrint("ItCLINiCAL", 1);
+        Assertions.assertEquals("I = 2\nC = 2\nL = 2\nN = 1\nA = 1\n", outContent.toString());
     }
 }
