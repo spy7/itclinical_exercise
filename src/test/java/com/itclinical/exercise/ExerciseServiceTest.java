@@ -94,4 +94,10 @@ public class ExerciseServiceTest {
         boolean result = exerciseService.isSpecialChar('8');
         Assertions.assertFalse(result);
     }
+
+    @Test
+    public void testGetUpperOrSymbolWithN2() {
+        String result = exerciseService.getUpperOrSymbol("ABCabc123!@#", 2);
+        Assertions.assertEquals("B2!#", result);
+    }
 }
