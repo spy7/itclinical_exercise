@@ -70,4 +70,10 @@ public class ExerciseServiceTest {
         String result = exerciseService.getUpperOrSymbol("!tCL1Nical", 1);
         Assertions.assertEquals("!CL1N", result);
     }
+
+    @Test
+    public void testIsSpecialCharWithSymbol() {
+        boolean result = exerciseService.isSpecialChar('!');
+        Assertions.assertTrue(result);
+    }
 }
