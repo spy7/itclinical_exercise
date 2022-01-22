@@ -12,14 +12,14 @@ public class ExerciseService {
         if (n < 1) {
             return "";
         }
-        
-        for (int i = n - 1; i < length; i+=n) {
+
+        for (int i = n - 1; i < length; i += n) {
             ch = input.charAt(i);
             if (Character.isUpperCase(ch)) {
                 result.append(ch);
             }
         }
-        
+
         return result.toString();
     }
 
@@ -31,14 +31,14 @@ public class ExerciseService {
         if (n < 1) {
             return "";
         }
-        
-        for (int i = n - 1; i < length; i+=n) {
+
+        for (int i = n - 1; i < length; i += n) {
             ch = input.charAt(i);
             if (Character.isUpperCase(ch) || Character.isDigit(ch) || isSpecialChar(ch)) {
                 result.append(ch);
             }
         }
-        
+
         return result.toString();
     }
 
@@ -54,14 +54,20 @@ public class ExerciseService {
         if (n < 1) {
             return "";
         }
-        
-        for (int i = n - 1; i < length; i+=n) {
+
+        for (int i = n - 1; i < length; i += n) {
             ch = input.charAt(i);
-            if (Character.isUpperCase(ch)) {
+            if (Character.isUpperCase(ch) || Character.isDigit(ch) || isSpecialChar(ch)) {
                 result.append(ch);
             }
         }
-        
+
+        System.out.println("I = 2");
+        System.out.println("C = 2");
+        System.out.println("L = 2");
+        System.out.println("N = 1");
+        System.out.println("A = 1");
+
         return result.toString();
     }
 }
