@@ -57,4 +57,10 @@ public class ExerciseServiceTest {
         String result = exerciseService.getUpper("", 1);
         Assertions.assertEquals("", result);
     }
+
+    @Test
+    public void testGetUpperWithSymbols() {
+        String result = exerciseService.getUpper("123!@#X", 1);
+        Assertions.assertEquals("X", result);
+    }
 }
