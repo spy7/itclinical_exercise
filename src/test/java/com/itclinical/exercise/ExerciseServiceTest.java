@@ -132,6 +132,7 @@ public class ExerciseServiceTest {
         Assertions.assertEquals("I = 2\nC = 2\nL = 2\nN = 1\nA = 1\n", outContent.toString());
     }
 
+    // Refactor: extract method
     @Test
     public void testCountChars() {
         exerciseService.printCount("ICLINCAL");

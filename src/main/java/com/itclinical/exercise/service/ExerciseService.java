@@ -53,7 +53,6 @@ public class ExerciseService {
         int length = input.length();
         char ch;
         StringBuilder result = new StringBuilder();
-        Map<Character, Integer> countChar = new LinkedHashMap<>();
 
         if (n < 1) {
             return "";
@@ -66,17 +65,23 @@ public class ExerciseService {
             }
         }
 
-        length = result.length();
+        printCount(result.toString());
+
+        return result.toString();
+    }
+
+    public void printCount(String input) {
+        int length = input.length();
+        char ch;
+        Map<Character, Integer> countChar = new LinkedHashMap<>();
 
         for (int i = 0; i < length; i++) {
-            ch = result.charAt(i);
+            ch = input.charAt(i);
             countChar.put(ch, countChar.getOrDefault(ch, 0) + 1);
         }
 
         for (Map.Entry<Character, Integer> charCount : countChar.entrySet()) {
             System.out.println(charCount.getKey() + " = " + charCount.getValue());
         }
-
-        return result.toString();
     }
 }
