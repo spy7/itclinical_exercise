@@ -1,5 +1,8 @@
 package com.itclinical.exercise.service;
 
+import java.util.LinkedHashMap;
+import java.util.Map;
+
 import org.springframework.stereotype.Service;
 
 @Service
@@ -50,6 +53,7 @@ public class ExerciseService {
         int length = input.length();
         char ch;
         StringBuilder result = new StringBuilder();
+        Map<Character, Integer> countChar = new LinkedHashMap<>();
 
         if (n < 1) {
             return "";
@@ -62,11 +66,16 @@ public class ExerciseService {
             }
         }
 
-        System.out.println("I = 2");
-        System.out.println("C = 2");
-        System.out.println("L = 2");
-        System.out.println("N = 1");
-        System.out.println("A = 1");
+        length = result.length();
+
+        for (int i = 0; i < length; i++) {
+            ch = result.charAt(i);
+            countChar.put(ch, countChar.getOrDefault(ch, 0) + 1);
+        }
+
+        for (Map.Entry<Character, Integer> charCount : countChar.entrySet()) {
+            System.out.println(charCount.getKey() + " = " + charCount.getValue());
+        }
 
         return result.toString();
     }
